@@ -12,9 +12,6 @@ public class CopyRotation : MonoBehaviour
     {
         float baseAngle = toCopyFrom.localRotation.eulerAngles.z;
         float multipliedAngle = (baseAngle - ((baseAngle > 180f) ? 360f : 0f)) * multiplier;
-
-        Debug.Log("base angle: " + baseAngle + " => " + multipliedAngle);
-
         transform.localRotation = Quaternion.Euler(0,0, multipliedAngle);
     }
 }
