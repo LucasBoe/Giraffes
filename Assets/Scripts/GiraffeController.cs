@@ -8,10 +8,9 @@ public class GiraffeController : MonoBehaviour
     [SerializeField] Transform neck;
     float neckRotation;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
+        lookAt.transform.parent = null;
     }
 
     // Update is called once per frame
@@ -39,7 +38,6 @@ public class GiraffeController : MonoBehaviour
         else
         {
             lookAt.velocity /= (1 + Time.deltaTime);
-            Debug.Log(lookAt.velocity.magnitude);
         }
 
         Vector2 lookDirection = (lookAt.transform.position - transform.position).normalized;
